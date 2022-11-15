@@ -23,11 +23,12 @@ public class CollisionManager : MonoBehaviour
          if (col.gameObject.name == "Item")
         {
             Destroy(col.gameObject);
+            Debug.Log("Item");
         }
         else
         {
             gameOverText.SetActive(true);
+            Debug.Log("Collision");
         }
-        Debug.Log("Collision");
     }
 }
