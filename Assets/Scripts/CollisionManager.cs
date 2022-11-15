@@ -20,9 +20,14 @@ public class CollisionManager : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Rigidbody rb = this.GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0, 0, 0);
+         if (col.gameObject.name == "Item")
+        {
+            Destroy(col.gameObject);
+        }
+        else
+        {
+            gameOverText.SetActive(true);
+        }
         Debug.Log("Collision");
-        gameOverText.SetActive(true);
     }
 }
