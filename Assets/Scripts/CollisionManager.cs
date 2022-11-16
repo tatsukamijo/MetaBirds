@@ -20,7 +20,7 @@ public class CollisionManager : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-         if (col.gameObject.name == "Item")
+         if (col.gameObject.tag == "Item")
         {
             Destroy(col.gameObject);
             Debug.Log("Item");
