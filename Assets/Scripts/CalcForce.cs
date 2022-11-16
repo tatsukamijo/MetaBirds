@@ -25,10 +25,4 @@ public class CalcForce : MonoBehaviour
     {
 
     }
-    void OnCollisionEnter(Collision col)
-    {
-        Rigidbody rb = this.GetComponent<Rigidbody>();
-        rb.velocity = new Vector3(0, 0, 0);
-
-    }
 }
