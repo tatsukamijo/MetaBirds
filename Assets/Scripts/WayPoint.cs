@@ -6,7 +6,7 @@ using UnityEngine;
 public class WayPoint : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("巡回する地点の配列")]
+    [Tooltip("通過地点の配列")]
     private Transform[] waypoints;
 
     // NavMeshAgentコンポーネントを入れる変数
@@ -29,6 +29,7 @@ public class WayPoint : MonoBehaviour
         // 目的地点までの距離(remainingDistance)が目的地の手前までの距離(stoppingDistance)以下になったら
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
+            Debug.Log($"waypoint{currentWaypointIndex}");
             // 目的地の番号を１更新（右辺を剰余演算子にすることで目的地をループさせれる）
             currentWaypointIndex += 1;
             // 目的地を次の場所に設定
