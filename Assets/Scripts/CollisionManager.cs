@@ -28,11 +28,13 @@ public class CollisionManager : MonoBehaviour
         }
          else if (col.gameObject.tag == "Muteki")
         {
-            navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
             Destroy(col.gameObject);
+            navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+            navMeshAgent.speed = 100;
+            navMeshAgent.acceleration = 100;
+
             Debug.Log("Muteki");
-            navMeshAgent.speed = 10;
-            navMeshAgent.acceleration = 10;
+            // navMeshAgent.SetDestination(navMeshAgent.nextPosition);
             Debug.Log($"Path: {navMeshAgent.speed}");
         }
          else if (col.gameObject.tag != "Item" && col.gameObject.tag != "Muteki")
