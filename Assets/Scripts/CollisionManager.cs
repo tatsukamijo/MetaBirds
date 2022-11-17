@@ -10,7 +10,7 @@ public class CollisionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,19 +21,24 @@ public class CollisionManager : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-         if (col.gameObject.tag == "Ball")
+        if (col.gameObject.tag == "Item")
         {
             Destroy(col.gameObject);
             Debug.Log("Item");
         }
-         if (col.gameObject.tag == "Muteki")
+         else if (col.gameObject.tag == "Muteki")
         {
+            navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
             Destroy(col.gameObject);
             Debug.Log("Muteki");
+            navMeshAgent.speed = 100;
+            navMeshAgent.acceleration = 100;
+            Debug.Log($"Path: {navMeshAgent.speed}");
         }
-        else
+         else if (col.gameObject.tag != "Item" && col.gameObject.tag != "Muteki")
         {
-            Debug.Log($"{col.gameObject}");
+            Debug.Log($"{col.gameObject.tag}");
             gameOverText.SetActive(true);
             Debug.Log("Collision");
         }
