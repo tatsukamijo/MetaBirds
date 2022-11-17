@@ -11,14 +11,11 @@ public class WayPoint : MonoBehaviour
 
     // NavMeshAgentコンポーネントを入れる変数
     private UnityEngine.AI.NavMeshAgent navMeshAgent;
-    // 現在の目的地
     private int currentWaypointIndex;
     // Start is called before the first frame update
     void Start()
     {
-       // navMeshAgent変数にNavMeshAgentコンポーネントを入れる
         navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        // 最初の目的地を入れる
         navMeshAgent.SetDestination(waypoints[0].position);
     }
 
@@ -29,6 +26,7 @@ public class WayPoint : MonoBehaviour
         if (navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
             Debug.Log($"waypoint{currentWaypointIndex} haspath{navMeshAgent.hasPath}");
+            // Debug.Log($"path: {navMeshAgent.path.corners}");
             currentWaypointIndex += 1;
             // 目的地を次の場所に設定
             navMeshAgent.SetDestination(waypoints[currentWaypointIndex].position);
