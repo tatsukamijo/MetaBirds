@@ -30,8 +30,8 @@ public class CollisionManager : MonoBehaviour
         {
             Destroy(col.gameObject);
             navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-            navMeshAgent.speed = 100;
-            navMeshAgent.acceleration = 100;
+            navMeshAgent.speed = 50;
+            navMeshAgent.acceleration = 20;
 
             Debug.Log("Muteki");
             // navMeshAgent.SetDestination(navMeshAgent.nextPosition);

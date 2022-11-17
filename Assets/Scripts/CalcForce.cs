@@ -18,7 +18,7 @@ public class CalcForce : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         //Rigidbodyに力を加える
-        rb.AddForce(50 * x, 20 * z, 30 * z);
+        rb.AddForce(10000 * x, 4000 * z, 6000 * z);
     }
 
     void FixedUpdate()

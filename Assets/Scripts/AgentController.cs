@@ -16,6 +16,7 @@ public class AgentController : MonoBehaviour
     void Update()
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        agent.SetDestination(goal.position);
+        Debug.Log("heading to the goal");
     }
 }
