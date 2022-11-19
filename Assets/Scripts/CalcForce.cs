@@ -14,11 +14,11 @@ public class CalcForce : MonoBehaviour
     void Update()
     {
         Rigidbody rb = this.GetComponent<Rigidbody>();  // rigidbodyを取得
-                                                        // 入力をxとzに代入
+           // 入力をxとzに代入
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         //Rigidbodyに力を加える
-        rb.AddForce(10000 * x, 4000 * z, 6000 * z);
+        rb.AddForce(10000 * x, 3000 * z, 6000 * z);
     }
 
     void FixedUpdate()

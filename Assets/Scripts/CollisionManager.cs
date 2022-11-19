@@ -21,6 +21,7 @@ public class CollisionManager : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
+        Animator anim = GetComponent<Animator>();
         if (col.gameObject.tag == "Item")
         {
             Destroy(col.gameObject);
@@ -29,13 +30,10 @@ public class CollisionManager : MonoBehaviour
          else if (col.gameObject.tag == "Muteki")
         {
             Destroy(col.gameObject);
-            navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-            navMeshAgent.speed = 50;
-            navMeshAgent.acceleration = 20;
-
+            anim.SetBool("is_Muteki", true);
             Debug.Log("Muteki");
             // navMeshAgent.SetDestination(navMeshAgent.nextPosition);
-            Debug.Log($"Path: {navMeshAgent.speed}");
+            // Debug.Log($"Path: {navMeshAgent.speed}");
         }
          else if (col.gameObject.tag != "Item" && col.gameObject.tag != "Muteki")
         {
