@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CollisionManager : MonoBehaviour
 {
+    public Transform goal;
     public GameObject gameOverText;
     private Animator anim;
+    private UnityEngine.AI.NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +18,7 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            anim.SetBool("is_Muteki", true);
-        }
+     
     }
 
     void OnCollisionEnter(Collision col)
@@ -28,13 +27,17 @@ public class CollisionManager : MonoBehaviour
         if (col.gameObject.tag == "Item")
         {
             Destroy(col.gameObject);
+            // Destroy(agent);
             Debug.Log("Item");
         }
          else if (col.gameObject.tag == "Muteki")
         {
+            UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+            agent.enabled = true;
             Destroy(col.gameObject);
-            anim.SetBool("is_Muteki", true);
             Debug.Log("Muteki");
+            agent.SetDestination(goal.position);
+            Debug.Log("heading to the goal");
             // navMeshAgent.SetDestination(navMeshAgent.nextPosition);
             // Debug.Log($"Path: {navMeshAgent.speed}");
         }
