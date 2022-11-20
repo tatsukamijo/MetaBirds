@@ -5,18 +5,21 @@ using UnityEngine;
 public class CollisionManager : MonoBehaviour
 {
     public GameObject gameOverText;
-    private UnityEngine.AI.NavMeshAgent navMeshAgent;
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.Space))
+        {
+            anim.SetBool("is_Muteki", true);
+        }
     }
 
     void OnCollisionEnter(Collision col)
