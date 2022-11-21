@@ -7,13 +7,11 @@ public class CollisionManager : MonoBehaviour
     public Transform goal;
     public GameObject gameOverText;
     public bool is_Muteki;
-    private Animator anim;
     private UnityEngine.AI.NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
-        // anim = gameObject.GetComponent<Animator>();
         is_Muteki = false;
     }
 
@@ -25,7 +23,6 @@ public class CollisionManager : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Animator anim = GetComponent<Animator>();
         if (col.gameObject.tag == "Item")
         {
             Destroy(col.gameObject);
@@ -33,15 +30,10 @@ public class CollisionManager : MonoBehaviour
         }
          else if (col.gameObject.tag == "Muteki")
         {
-            // UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-            // agent.enabled = true;
-            Destroy(col.gameObject);
             is_Muteki = true;
+            Destroy(col.gameObject);
             Debug.Log("Muteki");
-            // agent.SetDestination(goal.position);
             Debug.Log("heading to the goal");
-            // navMeshAgent.SetDestination(navMeshAgent.nextPosition);
-            // Debug.Log($"Path: {navMeshAgent.speed}");
         }
         else if (col.gameObject.tag == "Goal")
         {
