@@ -7,6 +7,7 @@ public class AgentController : MonoBehaviour
 {
     public Transform goal;
     public Transform tori;
+    public Vector3 nextPosition;
     private UnityEngine.AI.NavMeshAgent agent;
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class AgentController : MonoBehaviour
     {
         this.transform.position = tori.position;
         agent.SetDestination(goal.position);
-        Debug.Log("heading to the goal");
+        nextPosition = agent.nextPosition;
+        // Debug.Log($"{agent.nextPosition}");
     }
 }
