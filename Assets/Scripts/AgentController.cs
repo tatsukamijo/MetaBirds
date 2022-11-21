@@ -21,7 +21,7 @@ public class AgentController : MonoBehaviour
     {
         this.transform.position = tori.position;
         agent.SetDestination(goal.position);
-        nextPosition = agent.nextPosition;
+        nextPosition = agent.path.corners[0];
         // Debug.Log($"{agent.nextPosition}");
     }
 }

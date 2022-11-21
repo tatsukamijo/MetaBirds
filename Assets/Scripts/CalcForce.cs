@@ -9,6 +9,7 @@ public class CalcForce : MonoBehaviour
     private Vector3 velocity;
     */
     private Rigidbody rb;
+    private Vector3 pos_dif;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,12 @@ public class CalcForce : MonoBehaviour
         }
         else // is_Mutekiのとき
         {
-            rb.transform.position = agentcontroller.nextPosition;
+        float speed = 10.0f;
+        float forward_x = transform.forward.x * speed;
+        float forward_y = transform.forward.y * speed;
+        float forward_z = transform.forward.z * speed;
+
+        rb.velocity = new Vector3(forward_x, forward_y, forward_z);
         Debug.Log($"{agentcontroller.nextPosition}");
         }
 
