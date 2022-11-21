@@ -8,6 +8,7 @@ TagManager:
   - Item
   - Muteki
   - enemy
+  - Goal
   layers:
   - Default
   - TransparentFX

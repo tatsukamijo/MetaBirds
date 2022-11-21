@@ -10,6 +10,7 @@ public class CalcForce : MonoBehaviour
     */
     private Rigidbody rb;
     private Vector3 pos_dif;
+    public Transform agent;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +41,10 @@ public class CalcForce : MonoBehaviour
         float z = Input.GetAxis("Vertical") * speed;
         rb.AddForce(50f * x, 50f * z, 50f * z);
         }
-        else // is_Mutekiのとき
-        { 
+        else // is_Mutekiのとき. agentの位置にtoriを合わせる.
+        {
+            this.transform.position = agent.position;
+            /*
             // 座標系の変換が必要そう.
         float speed = 10.0f;
         float forward_x = transform.forward.x * speed;
@@ -49,7 +52,8 @@ public class CalcForce : MonoBehaviour
         float forward_z = transform.forward.z * speed;
             rb.velocity = new Vector3(0f, 0f, 0f);
         // rb.velocity = new Vector3(forward_x, forward_y, forward_z);
-        Debug.Log($"{agentcontroller.nextPosition}");
+        */
+        Debug.Log($"{collisionmanager.is_Muteki}");
         }
 
         /*

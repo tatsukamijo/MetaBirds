@@ -26,8 +26,22 @@ public class AgentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = tori.position;
-        agent.SetDestination(goal.position);
+        CollisionManager collisionmanager;
+        GameObject col_obj = GameObject.Find("fly");
+        collisionmanager = col_obj.GetComponent<CollisionManager>();
+
+        // ここをis_Mutekiで場合分け.どっちからどっちの座標を一致させるか.
+        if (!collisionmanager.is_Muteki)
+        {
+            this.transform.position = tori.position;
+        }
+        else
+        {
+            agent.speed = 300;
+            agent.acceleration = 300;
+            agent.SetDestination(goal.position);
+        }
+
         nextPosition = agent.path.corners[0];
         // Debug.Log($"{agent.nextPosition}");
     }

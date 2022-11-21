@@ -29,7 +29,6 @@ public class CollisionManager : MonoBehaviour
         if (col.gameObject.tag == "Item")
         {
             Destroy(col.gameObject);
-            // agent.updatePosition = false;
             Debug.Log("Item");
         }
          else if (col.gameObject.tag == "Muteki")
@@ -46,8 +45,8 @@ public class CollisionManager : MonoBehaviour
         }
         else if (col.gameObject.tag == "Goal")
         {
-            Destroy(col.gameObject);
             is_Muteki = false;
+            Destroy(col.gameObject);
             Debug.Log("reached goal");
         }
         else if (col.gameObject.tag != "Item" && col.gameObject.tag != "Muteki")
