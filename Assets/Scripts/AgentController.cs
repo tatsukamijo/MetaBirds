@@ -6,16 +6,19 @@ using UnityEngine.AI;
 public class AgentController : MonoBehaviour
 {
     public Transform goal;
+    public Transform tori;
+    private UnityEngine.AI.NavMeshAgent agent;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        this.transform.position = tori.position;
         agent.SetDestination(goal.position);
         Debug.Log("heading to the goal");
     }
