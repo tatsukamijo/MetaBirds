@@ -12,7 +12,7 @@ public class CollisionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
+        // anim = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,16 +27,16 @@ public class CollisionManager : MonoBehaviour
         if (col.gameObject.tag == "Item")
         {
             Destroy(col.gameObject);
-            // Destroy(agent);
+            // agent.updatePosition = false;
             Debug.Log("Item");
         }
          else if (col.gameObject.tag == "Muteki")
         {
-            UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-            agent.enabled = true;
+            // UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+            // agent.enabled = true;
             Destroy(col.gameObject);
             Debug.Log("Muteki");
-            agent.SetDestination(goal.position);
+            // agent.SetDestination(goal.position);
             Debug.Log("heading to the goal");
             // navMeshAgent.SetDestination(navMeshAgent.nextPosition);
             // Debug.Log($"Path: {navMeshAgent.speed}");
