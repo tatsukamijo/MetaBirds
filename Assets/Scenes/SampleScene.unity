@@ -2253,7 +2253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 852628279}
   tori: {fileID: 358747569}
-  nextPosition: {x: 0, y: 0, z: 0}
 --- !u!195 &812011100
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2264,8 +2263,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0
-  m_Acceleration: 0
+  m_Speed: 300
+  m_Acceleration: 300
   avoidancePriority: 50
   m_AngularSpeed: 0
   m_StoppingDistance: 0
@@ -2430,7 +2429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852628274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.3, y: 181.3, z: -193.6}
+  m_LocalPosition: {x: 79.3, y: 205.6, z: -119.4}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5027,7 +5026,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goal: {fileID: 143834703}
   tori: {fileID: 0}
-  nextPosition: {x: 0, y: 0, z: 0}
 --- !u!195 &1794731626
 NavMeshAgent:
   m_ObjectHideFlags: 0
