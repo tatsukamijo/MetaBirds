@@ -52,7 +52,7 @@ public class CollisionManager : MonoBehaviour
         }
         else if (col.gameObject.tag != "Item" && col.gameObject.tag != "Muteki")
         {
-            Debug.Log($"{col.gameObject.tag}");
+            Debug.Log("{col.gameObject.tag}");
             gameOverText.SetActive(true);
             Debug.Log("Collision");
         }
