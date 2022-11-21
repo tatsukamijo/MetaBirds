@@ -25,8 +25,8 @@ public class CalcForce : MonoBehaviour
     {
         float speed = 1000.0f;
         float x = Input.GetAxis("Horizontal") * speed;
-        float z = -Input.GetAxis("Vertical") * speed;
-        rb.AddForce(50f*z, -50f*z, 50f*z);
+        float z = Input.GetAxis("Vertical") * speed;
+        rb.AddForce(50f*x, 50f*z, 50f*z);
 
         /*
         velocity = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
