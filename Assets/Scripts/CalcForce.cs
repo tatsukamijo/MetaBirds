@@ -41,7 +41,8 @@ public class CalcForce : MonoBehaviour
         rb.AddForce(50f * x, 50f * z, 50f * z);
         }
         else // is_Mutekiのとき
-        {
+        { 
+            // 座標系の変換が必要そう.
         float speed = 10.0f;
         float forward_x = transform.forward.x * speed;
         float forward_y = transform.forward.y * speed;
