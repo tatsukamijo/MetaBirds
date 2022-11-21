@@ -47,8 +47,8 @@ public class CalcForce : MonoBehaviour
         float forward_x = transform.forward.x * speed;
         float forward_y = transform.forward.y * speed;
         float forward_z = transform.forward.z * speed;
-
-        rb.velocity = new Vector3(forward_x, forward_y, forward_z);
+            rb.velocity = new Vector3(0f, 0f, 0f);
+        // rb.velocity = new Vector3(forward_x, forward_y, forward_z);
         Debug.Log($"{agentcontroller.nextPosition}");
         }
 
