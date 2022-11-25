@@ -7,6 +7,7 @@ public class CollisionManager : MonoBehaviour
     public Transform goal;
     public GameObject gameOverText;
     public bool is_Muteki;
+    public float Time;
     private UnityEngine.AI.NavMeshAgent agent;
 
     // Start is called before the first frame update

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class ConsoleOutput : MonoBehaviour
 {
     public SerialHandler serialHandler;
+    public string[] data;
 
     void Start()
     {
@@ -13,7 +14,7 @@ public class ConsoleOutput : MonoBehaviour
 
     void OnDataReceived(string message)
     {
-        var data = message.Split(
+        data = message.Split(
             new string[] { "\n" }, System.StringSplitOptions.None);
         if (data.Length != 1) return;
         Debug.Log(data[0]);
