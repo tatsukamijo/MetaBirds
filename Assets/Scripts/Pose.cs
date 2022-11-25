@@ -13,27 +13,22 @@ public class Pose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Rigidbody rb = this.GetComponent<Rigidbody>();
-
-        // ↑キー押下時
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            // rb.transform.Rotate(new Vector3(-10f, 0f, 0f));
-        }
-        // ↓キー押下時
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            // rb.transform.Rotate(new Vector3(10f, 0f, 0f));
-        }
+        Vector3 localAngle = this.transform.localEulerAngles;
         // →キー押下時
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            rb.transform.Rotate(new Vector3(0f, 0f, -20f));
+            localAngle.x += 10.0f;
+            localAngle.y = 97.011f;
+            localAngle.z = -20.215f;
+            this.transform.localEulerAngles = localAngle;
         }
         // ←キー押下時
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            rb.transform.Rotate(new Vector3(0f, 0f, 20f));
+            localAngle.x -= 10.0f;
+            localAngle.y = 97.011f;
+            localAngle.z = -20.215f;
+            this.transform.localEulerAngles = localAngle;
         }
     }
 }

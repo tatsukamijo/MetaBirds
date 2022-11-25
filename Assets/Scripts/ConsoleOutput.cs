@@ -17,6 +17,7 @@ public class ConsoleOutput : MonoBehaviour
         data = message.Split(
             new string[] { "\n" }, System.StringSplitOptions.None);
         if (data.Length != 1) return;
+        // アングルが10000足してくる
         Debug.Log(data[0]);
     }
 }
