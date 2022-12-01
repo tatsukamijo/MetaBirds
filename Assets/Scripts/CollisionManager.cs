@@ -55,6 +55,10 @@ public class CollisionManager : MonoBehaviour
             Destroy(col.gameObject);
             Debug.Log("reached goal");
         }
+        else if (col.gameObject.tag == "Wall")
+        {
+
+        }
         else if (col.gameObject.tag != "Item" && col.gameObject.tag != "Muteki")
         {
             Debug.Log("{col.gameObject.tag}");
