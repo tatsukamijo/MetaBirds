@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingC
       objectReference: {fileID: 0}
+    - target: {fileID: 7804852277444767364, guid: 7e4f3db21999e164d84cd73465d63d2e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7804852277444767384, guid: 7e4f3db21999e164d84cd73465d63d2e, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -43,6 +43,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buildingA
       objectReference: {fileID: 0}
+    - target: {fileID: 562578529331797913, guid: 01ea09b06002f9a4385e74686fe36a0a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 562578529331797917, guid: 01ea09b06002f9a4385e74686fe36a0a, type: 3}
       propertyPath: m_RootOrder
       value: 0
