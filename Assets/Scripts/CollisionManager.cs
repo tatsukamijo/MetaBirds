@@ -1,25 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CollisionManager : MonoBehaviour
 {
     public Transform goal;
     public GameObject gameOverText;
+    public Text TimeText;
     public bool is_Muteki;
-    public float Time;
+    public bool is_GameOver;
+    public bool is_Goal;
+    public float time;
     private UnityEngine.AI.NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
         is_Muteki = false;
+        is_GameOver = false;
+        is_Goal = false;
+        time = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        if (is_GameOver == false)
+        {
+            time += Time.deltaTime;
+            TimeText.text = time.ToString();
+        }
     }
 
     void OnCollisionEnter(Collision col)
@@ -46,6 +57,7 @@ public class CollisionManager : MonoBehaviour
         {
             Debug.Log("{col.gameObject.tag}");
             gameOverText.SetActive(true);
+            is_GameOver = true;
             Debug.Log("Collision");
         }
     }
