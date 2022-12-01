@@ -26,7 +26,7 @@ public class guidance : MonoBehaviour
             {
                 float dist = Vector3.Distance(player.transform.position, obj.transform.position);
                 float zdist = (obj.transform.position - player.transform.position)[2];
-                Debug.Log(zdist);
+                //Debug.Log(zdist);
                 if (dist <= min_dist && zdist > detectLimit)
                 {
                     nearest_item = obj;
