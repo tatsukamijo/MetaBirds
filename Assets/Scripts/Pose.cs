@@ -68,6 +68,13 @@ public class Pose : MonoBehaviour
             acceleration = hoge;
             return;
         }
+        /*
+        else
+        {
+            tilt = hoge - 10000;
+        }
+        */
+
         // -15から0
         else if (9985f < hoge && hoge <= 10000f)
         {
@@ -115,5 +122,6 @@ public class Pose : MonoBehaviour
             tilt = 45.0f;
             return;
         }
+
     }
 }
