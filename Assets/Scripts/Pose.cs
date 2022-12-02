@@ -8,6 +8,7 @@ public class Pose : MonoBehaviour
     public string[] data;
     public float acceleration;
     public float tilt;
+    public float tilt_forward;
     private float hoge;
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class Pose : MonoBehaviour
     {
         acceleration = 0f;
         tilt = 0f;
+        tilt_forward = 0f;
         // serialHandler.OnDataReceived += OnDataReceived;
     }
 
@@ -68,6 +70,11 @@ public class Pose : MonoBehaviour
         if (hoge < 5000)
         {
             acceleration = hoge;
+            return;
+        }
+        if (hoge > 20000)
+        {
+            tilt_forward = hoge - 20000;
             return;
         }
         // -15から0

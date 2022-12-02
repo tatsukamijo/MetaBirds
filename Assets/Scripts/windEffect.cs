@@ -5,6 +5,7 @@ using UnityEngine;
 public class windEffect : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Vector3 v; 
     void Start()
     {
         

@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CollisionManager : MonoBehaviour
 {
     public Transform goal;
     public GameObject gameOverText;
-    // public Text TimeText;
+    public TextMeshProUGUI TimeText;
     public bool is_Muteki;
     public bool is_GameOver;
     public bool is_Goal;
@@ -26,13 +27,11 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
         if (is_GameOver == false)
         {
             time += Time.deltaTime;
-            TimeText.text = time.ToString();
+            TimeText.text = time.ToString("f2");
         }
-        */
     }
 
     void OnCollisionEnter(Collision col)
