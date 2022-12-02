@@ -8,7 +8,7 @@ public class SerialHandler : MonoBehaviour
     public delegate void SerialDataReceivedEventHandler(string message);
     public event SerialDataReceivedEventHandler OnDataReceived;
 
-    public string portName = "/dev/ttyUSB0";
+    public string portName = "/dev/ttyS0";
     public int baudRate = 9600;
 
     private SerialPort serialPort_;

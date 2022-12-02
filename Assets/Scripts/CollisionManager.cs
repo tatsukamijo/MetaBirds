@@ -26,11 +26,13 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (is_GameOver == false)
         {
             time += Time.deltaTime;
             TimeText.text = time.ToString();
         }
+        */
     }
 
     void OnCollisionEnter(Collision col)
