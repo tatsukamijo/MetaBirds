@@ -23,12 +23,17 @@ public class CalcForce : MonoBehaviour
         CollisionManager collisionmanager;
         collisionmanager = GameObject.Find("fly").GetComponent<CollisionManager>();
 
+        Pose pose;
+        pose = GameObject.Find("fly").GetComponent<Pose>();
+
+        Debug.Log($"{Mathf.Sin(pose.tilt)}");
+
         if (!collisionmanager.is_Muteki)
         {
             float speed = 1000.0f;
             float x = Input.GetAxis("Horizontal") * speed;
             float z = Input.GetAxis("Vertical") * speed;
-            rb.AddForce(50f * x, 50f * z, 50f * z);
+            // Vector3 forceAngle = ();
             // Vector3 localAngle = this.transform.localEulerAngles;
             // Debug.Log($"{localAngle}");
             // rb.AddForce(transform.forward * 10.0f, ForceMode.Force);
