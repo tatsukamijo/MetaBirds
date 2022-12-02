@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CalcForce : MonoBehaviour
 {
- 
     private Rigidbody rb;
     public Transform agent;
 
@@ -30,6 +29,9 @@ public class CalcForce : MonoBehaviour
             float x = Input.GetAxis("Horizontal") * speed;
             float z = Input.GetAxis("Vertical") * speed;
             rb.AddForce(50f * x, 50f * z, 50f * z);
+            // Vector3 localAngle = this.transform.localEulerAngles;
+            // Debug.Log($"{localAngle}");
+            // rb.AddForce(transform.forward * 10.0f, ForceMode.Force);
         }
         else // is_Mutekiのとき. agentが制御.
         {
