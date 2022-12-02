@@ -26,7 +26,7 @@ public class CalcForce : MonoBehaviour
         Pose pose;
         pose = GameObject.Find("fly").GetComponent<Pose>();
 
-        Debug.Log($"{Mathf.Sin(pose.tilt)}");
+        Debug.Log($"{pose.tilt_forward}");
 
         if (!collisionmanager.is_Muteki)
         {

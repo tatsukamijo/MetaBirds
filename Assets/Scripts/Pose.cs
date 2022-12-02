@@ -16,7 +16,6 @@ public class Pose : MonoBehaviour
     {
         acceleration = 0f;
         tilt = 0f;
-        tilt_forward = 0f;
         serialHandler.OnDataReceived += OnDataReceived;
     }
 
@@ -31,7 +30,6 @@ public class Pose : MonoBehaviour
         this.transform.localEulerAngles = localAngle;
 
         /*
-        Vector3 localAngle = this.transform.localEulerAngles;
         // →キー押下時
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -49,9 +47,7 @@ public class Pose : MonoBehaviour
             this.transform.localEulerAngles = localAngle;
         }
         */
-
     }
-
 
     void OnDataReceived(string message)
     {
@@ -62,22 +58,24 @@ public class Pose : MonoBehaviour
         {
             hoge = float.Parse(data[0]);
         }
-        catch
+        catch 
         {
             return;
         }
 
-        Debug.Log(hoge);
+        // Debug.Log(hoge);
         if (hoge < 5000)
         {
             acceleration = hoge;
             return;
         }
-        if (hoge > 20000)
+        else if (hoge > 15000)
         {
             tilt_forward = hoge - 20000;
+            // Debug.Log($"tilt_forward: {tilt_forward}");
             return;
         }
+
         // -15から0
         else if (9985f < hoge && hoge <= 10000f)
         {
@@ -125,6 +123,5 @@ public class Pose : MonoBehaviour
             tilt = 45.0f;
             return;
         }
-
     }
 }
