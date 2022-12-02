@@ -26,14 +26,18 @@ public class CalcForce : MonoBehaviour
         Pose pose;
         pose = GameObject.Find("fly").GetComponent<Pose>();
 
-        Debug.Log($"{pose.tilt_forward}");
+        // Debug.Log($"{pose.tilt_forward}");
 
         if (!collisionmanager.is_Muteki)
         {
             float speed = 1000.0f;
             float x = Input.GetAxis("Horizontal") * speed;
             float z = Input.GetAxis("Vertical") * speed;
-            // Vector3 forceAngle = ();
+            Vector3 forceAngle = new Vector3(Mathf.Sin(pose.tilt), Mathf.Sin(15f + 0.05f*pose.tilt_forward), -Mathf.Cos(15 + pose.tilt_forward));
+            // Mathf.Sin(pose.tilt), Mathf.Sin(15 + pose.tilt_forward), -Mathf.Cos(15 + pose.tilt_forward)
+            rb.AddForce(50000f*forceAngle.x, 50000f*forceAngle.y, 50000f*forceAngle.z);
+            // rb.AddForce(50f * x, 50f * z, 50f * z);
+            Debug.Log($"{forceAngle}");
             // Vector3 localAngle = this.transform.localEulerAngles;
             // Debug.Log($"{localAngle}");
             // rb.AddForce(transform.forward * 10.0f, ForceMode.Force);

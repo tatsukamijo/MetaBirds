@@ -26,7 +26,7 @@ public class Pose : MonoBehaviour
         Vector3 localAngle = this.transform.localEulerAngles;
         localAngle.x = tilt;
         localAngle.y = 97.011f;
-        localAngle.z = -20.215f;
+        localAngle.z = -20.215f - tilt_forward;
         this.transform.localEulerAngles = localAngle;
 
         /*
@@ -64,15 +64,26 @@ public class Pose : MonoBehaviour
         }
 
         // Debug.Log(hoge);
-        if (hoge < 5000)
+        if (hoge < 5000f)
         {
             acceleration = hoge;
             return;
         }
-        else if (hoge > 15000)
+        else if (hoge > 15000f)
         {
-            tilt_forward = hoge - 20000;
-            // Debug.Log($"tilt_forward: {tilt_forward}");
+            hoge -= 20000f;
+            if (hoge > 15f)
+            {
+                tilt_forward = 15f;
+            }
+            else if (hoge < -15f)
+            {
+                tilt_forward = -15f;
+            }
+            else
+            {
+                tilt_forward = 0f;
+            }
             return;
         }
 
