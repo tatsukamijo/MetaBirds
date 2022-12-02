@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pose : MonoBehaviour
 {
-    // public SerialHandler serialHandler;
+    public SerialHandler serialHandler;
     public string[] data;
     public float acceleration;
     public float tilt;
@@ -17,20 +17,20 @@ public class Pose : MonoBehaviour
         acceleration = 0f;
         tilt = 0f;
         tilt_forward = 0f;
-        // serialHandler.OnDataReceived += OnDataReceived;
+        serialHandler.OnDataReceived += OnDataReceived;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
+
         Vector3 localAngle = this.transform.localEulerAngles;
         localAngle.x = tilt;
         localAngle.y = 97.011f;
         localAngle.z = -20.215f;
         this.transform.localEulerAngles = localAngle;
-        */
 
+        /*
         Vector3 localAngle = this.transform.localEulerAngles;
         // →キー押下時
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -48,10 +48,11 @@ public class Pose : MonoBehaviour
             localAngle.z = -20.215f;
             this.transform.localEulerAngles = localAngle;
         }
+        */
 
     }
 
-    /*
+
     void OnDataReceived(string message)
     {
         data = message.Split(
@@ -126,5 +127,4 @@ public class Pose : MonoBehaviour
         }
 
     }
-    */   
 }
