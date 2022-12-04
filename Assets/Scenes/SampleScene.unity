@@ -5899,7 +5899,7 @@ AudioSource:
   Priority: 158
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -6978,7 +6978,7 @@ AudioSource:
   Priority: 158
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -7261,7 +7261,7 @@ AudioSource:
   Priority: 158
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -7343,6 +7343,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231966983}
     m_Modifications:
+    - target: {fileID: 4889110499566320969, guid: 910702b776c46a74fbe8f8ff69c19bcc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4889110499566320971, guid: 910702b776c46a74fbe8f8ff69c19bcc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7411,6 +7415,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4889110499566321014, guid: 910702b776c46a74fbe8f8ff69c19bcc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4889110499566321015, guid: 910702b776c46a74fbe8f8ff69c19bcc, type: 3}
       propertyPath: target
       value: 
@@ -7471,7 +7479,7 @@ AudioSource:
   Priority: 158
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -9556,7 +9564,7 @@ AudioSource:
   Priority: 158
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -10424,7 +10432,7 @@ AudioSource:
   Priority: 158
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
