@@ -2110,6 +2110,7 @@ MonoBehaviour:
   gameOverText: {fileID: 305575717}
   TimeText: {fileID: 855334448}
   ScoreText: {fileID: 490132970}
+  serialHandler: {fileID: 498471891}
   is_Muteki: 0
   is_Goal: 0
   time: 0

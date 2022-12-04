@@ -10,6 +10,7 @@ public class CollisionManager : MonoBehaviour
     public GameObject gameOverText;
     public TextMeshProUGUI TimeText;
     public TextMeshProUGUI ScoreText;
+    public SerialHandler serialHandler;
     public bool is_Muteki;
     private bool is_GameOver;
     public bool is_Goal;
@@ -62,6 +63,8 @@ public class CollisionManager : MonoBehaviour
         else if (col.gameObject.tag == "Muteki")
         {
             is_Muteki = true;
+            // ESP32に送信
+            serialHandler.Write("MutekiStart");
             Destroy(col.gameObject);
             Debug.Log("Muteki");
             Debug.Log("heading to the goal");
@@ -72,6 +75,8 @@ public class CollisionManager : MonoBehaviour
         else if (col.gameObject.tag == "Goal")
         {
             is_Muteki = false;
+            // ESP32に送信
+            serialHandler.Write("MutekiEnd");
             Destroy(col.gameObject);
             Debug.Log("reached goal");
             audioSource.clip = BGM_main;
@@ -84,6 +89,8 @@ public class CollisionManager : MonoBehaviour
         else if (col.gameObject.tag != "Item" && col.gameObject.tag != "Muteki")
         { 
             Debug.Log("{col.gameObject.tag}");
+            // ESP32に送信
+            serialHandler.Write("GameOver");
             gameOverText.SetActive(true);
             is_GameOver = true;
             Debug.Log($"{is_GameOver}");
