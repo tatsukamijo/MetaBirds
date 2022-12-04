@@ -543,7 +543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time :'
+  m_text: "Time :\t\tScore :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 80.2807, w: 0}
+  m_margin: {x: 0, y: 0, z: -191.7008, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1231,6 +1231,7 @@ MonoBehaviour:
   is_GameOver: 0
   is_Goal: 0
   time: 0
+  item_obtained: 0
   BGM_main: {fileID: 0}
   BGM_muteki: {fileID: 0}
   BGM_gameover: {fileID: 0}
@@ -1837,6 +1838,7 @@ MonoBehaviour:
   is_GameOver: 0
   is_Goal: 0
   time: 0
+  item_obtained: 0
   BGM_main: {fileID: 8300000, guid: bd7bc15f66e1ba04da870067aed9c44e, type: 3}
   BGM_muteki: {fileID: 8300000, guid: df4babf1985979f45ae9aa91822157de, type: 3}
   BGM_gameover: {fileID: 0}
