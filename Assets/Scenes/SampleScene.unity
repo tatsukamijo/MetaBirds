@@ -560,7 +560,7 @@ MonoBehaviour:
   m_text: "\u5F37\u98A8\u6CE8\u610F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 87084c86153c34d9d87902051600e4bc, type: 2}
-  m_sharedMaterial: {fileID: -6203261473086760972, guid: 87084c86153c34d9d87902051600e4bc, type: 2}
+  m_sharedMaterial: {fileID: -768591933266713440, guid: 87084c86153c34d9d87902051600e4bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
