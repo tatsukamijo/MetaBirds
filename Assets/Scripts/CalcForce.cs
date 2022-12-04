@@ -18,6 +18,7 @@ public class CalcForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // z軸方向に等速運動
         transform.position += 100f*Vector3.forward * Time.deltaTime;
 
         AgentController agentcontroller;
@@ -34,10 +35,11 @@ public class CalcForce : MonoBehaviour
             float speed = 1000.0f;
             float x = Input.GetAxis("Horizontal") * speed;
             float z = Input.GetAxis("Vertical") * speed;
+            rb.AddForce(50f * x, 50f * z, 0f);
+            // defaultでz軸から10°方向に力加える
             Vector3 forceAngle = new Vector3(Mathf.Cos(pose.tilt_forward + 10f) * Mathf.Sin(pose.tilt), Mathf.Cos(pose.tilt) * Mathf.Sin(pose.tilt_forward + 10f), 0f);
             // rb.AddForce(50000f*forceAngle.x, 50000f*forceAngle.y, 50000f*forceAngle.z);
-            rb.AddForce(50f * x, 50f * z, 0f);
-            forceKeisu = 50000f * pose.acceleration;
+            // forceKeisu = 50000f * pose.acceleration;
             // rb.AddForce(forceKeisu * forceAngle.x, forceKeisu * forceAngle.y, forceKeisu * forceAngle.z);
         }
         else // is_Mutekiのとき. agentが制御.
