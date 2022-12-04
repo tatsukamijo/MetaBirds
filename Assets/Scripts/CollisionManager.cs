@@ -11,7 +11,7 @@ public class CollisionManager : MonoBehaviour
     public TextMeshProUGUI TimeText;
     public TextMeshProUGUI ScoreText;
     public bool is_Muteki;
-    public bool is_GameOver;
+    private bool is_GameOver;
     public bool is_Goal;
     public float time;
     public int item_obtained;
@@ -42,6 +42,7 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log($"{is_GameOver}");
         if (is_GameOver == false)
         {
             time += Time.deltaTime;
@@ -86,6 +87,7 @@ public class CollisionManager : MonoBehaviour
             Debug.Log("{col.gameObject.tag}");
             gameOverText.SetActive(true);
             is_GameOver = true;
+            Debug.Log($"{is_GameOver}");
             audioSource.PlayOneShot(SE_damage);
             Debug.Log("Collision");
             audioSource.clip = BGM_gameover;
