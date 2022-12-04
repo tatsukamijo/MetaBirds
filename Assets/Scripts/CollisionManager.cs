@@ -42,7 +42,6 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"{is_GameOver}");
         if (is_GameOver == false)
         {
             time += Time.deltaTime;
