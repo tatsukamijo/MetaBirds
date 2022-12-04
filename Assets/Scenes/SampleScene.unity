@@ -4171,7 +4171,7 @@ PrefabInstance:
       objectReference: {fileID: 498471880}
     - target: {fileID: 4889110499566321015, guid: 910702b776c46a74fbe8f8ff69c19bcc, type: 3}
       propertyPath: force.x
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 4889110499566321015, guid: 910702b776c46a74fbe8f8ff69c19bcc, type: 3}
       propertyPath: force.y
