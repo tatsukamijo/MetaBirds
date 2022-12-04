@@ -9,10 +9,12 @@ public class CollisionManager : MonoBehaviour
     public Transform goal;
     public GameObject gameOverText;
     public TextMeshProUGUI TimeText;
+    public TextMeshProUGUI ScoreText;
     public bool is_Muteki;
-    public bool is_GameOver;
+    private bool is_GameOver;
     public bool is_Goal;
     public float time;
+    public int item_obtained;
     public AudioClip BGM_main;
     public AudioClip BGM_muteki;
     public AudioClip BGM_gameover;
@@ -30,6 +32,8 @@ public class CollisionManager : MonoBehaviour
         is_GameOver = false;
         is_Goal = false;
         time = 0.0f;
+        item_obtained = 0;
+        ScoreText.text = item_obtained.ToString();
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = BGM_main;
         audioSource.Play();
@@ -38,6 +42,7 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log($"{is_GameOver}");
         if (is_GameOver == false)
         {
             time += Time.deltaTime;
@@ -51,6 +56,8 @@ public class CollisionManager : MonoBehaviour
         {
             Destroy(col.gameObject);
             Debug.Log("Item");
+            item_obtained += 1;
+            ScoreText.text = item_obtained.ToString();
             audioSource.PlayOneShot(SE_item);
         }
         else if (col.gameObject.tag == "Muteki")
@@ -80,6 +87,7 @@ public class CollisionManager : MonoBehaviour
             Debug.Log("{col.gameObject.tag}");
             gameOverText.SetActive(true);
             is_GameOver = true;
+            Debug.Log($"{is_GameOver}");
             audioSource.PlayOneShot(SE_damage);
             Debug.Log("Collision");
             audioSource.clip = BGM_gameover;
