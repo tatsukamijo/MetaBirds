@@ -18,7 +18,7 @@ public class buildingSetter : MonoBehaviour
         {
             int n = Random.Range(0, collection.Length);
             Instantiate(collection[n], new Vector3(x, 0, z), Quaternion.identity);
-            z += 100 + offset;
+            z += 200 + offset;
         }
     }
 }
