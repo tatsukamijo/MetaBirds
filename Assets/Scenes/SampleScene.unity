@@ -1221,25 +1221,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 305575717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2512b4a07bf694c8c494afbef60b17, type: 3}
+  m_Script: {fileID: 11500000, guid: 3af0172c47cbd6764bd31ca59aaa7dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
   gameOverText: {fileID: 305575717}
-  TimeText: {fileID: 0}
-  ScoreText: {fileID: 0}
-  is_Muteki: 0
-  is_GameOver: 0
-  is_Goal: 0
-  time: 0
-  item_obtained: 0
-  BGM_main: {fileID: 0}
-  BGM_muteki: {fileID: 0}
-  BGM_gameover: {fileID: 0}
-  BGM_goal: {fileID: 0}
-  SE_item: {fileID: 0}
-  SE_muteki: {fileID: 0}
-  SE_damage: {fileID: 0}
 --- !u!1001 &318090079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1972,7 +1957,6 @@ MonoBehaviour:
   TimeText: {fileID: 855334448}
   ScoreText: {fileID: 490132970}
   is_Muteki: 0
-  is_GameOver: 0
   is_Goal: 0
   time: 0
   item_obtained: 0
