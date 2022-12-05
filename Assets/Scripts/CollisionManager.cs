@@ -67,7 +67,7 @@ public class CollisionManager : MonoBehaviour
         {
             is_Muteki = true;
             // ESP32に送信
-            serialHandler.Write("MutekiStart");
+            serialHandler.Write("4");
             Destroy(col.gameObject);
             Debug.Log("Muteki");
             Debug.Log("heading to the goal");
