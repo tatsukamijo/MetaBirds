@@ -8,12 +8,14 @@ public class CollisionManager : MonoBehaviour
 {
     public Transform goal;
     public GameObject gameOverText;
+    public GameObject ClearUI;
     public TextMeshProUGUI TimeText;
     public TextMeshProUGUI ScoreText;
     public SerialHandler serialHandler;
     public bool is_Muteki;
     private bool is_GameOver;
     public bool is_Goal;
+    public bool is_Clear;
     public float time;
     public int item_obtained;
     public AudioClip BGM_main;
@@ -32,6 +34,7 @@ public class CollisionManager : MonoBehaviour
         is_Muteki = false;
         is_GameOver = false;
         is_Goal = false;
+        is_Clear = false;
         time = 0.0f;
         item_obtained = 0;
         ScoreText.text = item_obtained.ToString();
@@ -82,6 +85,11 @@ public class CollisionManager : MonoBehaviour
             audioSource.clip = BGM_main;
             audioSource.Play();
         }
+        else if (col.gameObject.tag == "Clear")
+        {
+            is_Clear = true;
+            ClearUI.SetActive(true);
+        }
         else if (col.gameObject.tag == "Wall")
         {
 
@@ -90,7 +98,7 @@ public class CollisionManager : MonoBehaviour
         { 
             Debug.Log("{col.gameObject.tag}");
             // ESP32に送信
-            serialHandler.Write("GameOver");
+            serialHandler.Write("2");
             gameOverText.SetActive(true);
             is_GameOver = true;
             Debug.Log($"{is_GameOver}");
