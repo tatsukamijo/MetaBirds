@@ -42,7 +42,7 @@ public class wind : MonoBehaviour
         if (col.attachedRigidbody == rb)
         {
             rb.AddForce(force);
-            //Debug.Log("hit");
+            Debug.Log("hit");
         }
     }
 
