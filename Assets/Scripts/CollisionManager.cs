@@ -79,7 +79,7 @@ public class CollisionManager : MonoBehaviour
         {
             is_Muteki = false;
             // ESP32に送信
-            serialHandler.Write("MutekiEnd");
+            serialHandler.Write("6");
             Destroy(col.gameObject);
             Debug.Log("reached goal");
             audioSource.clip = BGM_main;
