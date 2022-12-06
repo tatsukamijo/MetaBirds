@@ -42,8 +42,8 @@ public class CalcForce : MonoBehaviour
             Debug.Log($"acceleration: {pose.acceleration}");
             // Debug.Log($"tilt: {pose.tilt}");
             // forceKeisu = 50000f * pose.acceleration;
-            forceKeisu = 500f*pose.acceleration;
-            rb.AddForce(30f*forceKeisu * forceAngle.x, 7f*forceKeisu * forceAngle.y, forceKeisu * forceAngle.z);
+            forceKeisu = pose.acceleration/3f;
+            rb.AddForce(250f*forceKeisu * forceAngle.x, 60f*forceKeisu * forceAngle.y, forceKeisu * forceAngle.z);
         }
         else // is_Mutekiのとき. agentが制御.
         {
