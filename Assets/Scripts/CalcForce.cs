@@ -35,7 +35,7 @@ public class CalcForce : MonoBehaviour
             float speed = 1000.0f;
             float x = Input.GetAxis("Horizontal") * speed;
             float z = Input.GetAxis("Vertical") * speed;
-            // rb.AddForce(50f * x, 50f * z, 0f);
+            rb.AddForce(50f * x, 50f * z, 0f);
             // defaultでz軸から10°方向に力加える
             Vector3 forceAngle = new Vector3(pose.tilt, 10f + pose.tilt_forward, 0f);
             // rb.AddForce(50000f*forceAngle.x, 50000f*forceAngle.y, 50000f*forceAngle.z);
