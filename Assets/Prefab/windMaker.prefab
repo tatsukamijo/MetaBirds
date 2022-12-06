@@ -210,3 +210,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 919132149155446097, guid: 2688d90f0a80c15c285066f9126690e2, type: 3}
   force: {x: 0, y: -5000000, z: 0}
+  is_Wind: 0
+  windWarnText: {fileID: 0}
