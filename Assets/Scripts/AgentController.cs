@@ -21,6 +21,7 @@ public class AgentController : MonoBehaviour
         CollisionManager collisionmanager;
         collisionmanager = GameObject.Find("fly").GetComponent<CollisionManager>();
 
+        Debug.Log($"is_Muteki: {collisionmanager.is_Muteki}");
         //  is_Mutekiで制御主体を切り替え
         if (!collisionmanager.is_Muteki)
         {
@@ -28,8 +29,8 @@ public class AgentController : MonoBehaviour
         }
         else
         {
-            agent.speed = 300;
-            agent.acceleration = 300;
+            agent.speed = 600;
+            agent.acceleration = 400;
             agent.SetDestination(goal.position);
         }
     }
