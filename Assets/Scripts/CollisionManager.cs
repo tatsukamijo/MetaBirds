@@ -89,6 +89,9 @@ public class CollisionManager : MonoBehaviour
         {
             is_Clear = true;
             ClearUI.SetActive(true);
+            audioSource.clip = BGM_goal;
+            audioSource.Play();
+            //audioSource.PlayOneShot(BGM_goal);
         }
         else if (col.gameObject.tag == "Wall")
         {
