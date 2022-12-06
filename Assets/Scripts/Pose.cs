@@ -62,8 +62,12 @@ public class Pose : MonoBehaviour
         {
             return;
         }
+        if (hoge == -1)
+        {
+            return;
+        }
 
-        // Debug.Log(hoge);
+        // Debug.Log($"sensor: {hoge}");
         if (hoge < 5000f)
         {
             acceleration = hoge;
@@ -78,7 +82,7 @@ public class Pose : MonoBehaviour
             }
             else if (hoge < -15f)
             {
-                tilt_forward = -15f;
+                tilt_forward = -35f;
             }
             else
             {
@@ -96,7 +100,7 @@ public class Pose : MonoBehaviour
         // 0から15
         else if (10000f < hoge && hoge <= 10015f)
         {
-            tilt = 15.0f;
+            tilt = 0.0f;
             return;
         }
         // -30から-15
@@ -108,7 +112,7 @@ public class Pose : MonoBehaviour
         // 15から30
         else if (10015f < hoge && hoge <= 10030f)
         {
-            tilt = 30.0f;
+            tilt = 15.0f;
             return;
         }
         // -45から-30
@@ -120,7 +124,7 @@ public class Pose : MonoBehaviour
         // 30から45
         else if (10030f < hoge && hoge <= 10045f)
         {
-            tilt = 45.0f;
+            tilt = 30.0f;
             return;
         }
         // -45より小さい場合

@@ -7,7 +7,7 @@ public class CalcForce : MonoBehaviour
     private Rigidbody rb;
     public Transform agent;
     private float forceKeisu;
-    private float speed_z = 1000f;
+    private Vector3 forceAngle;
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +35,15 @@ public class CalcForce : MonoBehaviour
             float speed = 1000.0f;
             float x = Input.GetAxis("Horizontal") * speed;
             float z = Input.GetAxis("Vertical") * speed;
-            rb.AddForce(50f * x, 50f * z, 0f);
+            // rb.AddForce(50f * x, 50f * z, 0f);
             // defaultでz軸から10°方向に力加える
-            Vector3 forceAngle = new Vector3(Mathf.Cos(pose.tilt_forward + 10f) * Mathf.Sin(pose.tilt), Mathf.Cos(pose.tilt) * Mathf.Sin(pose.tilt_forward + 10f), 0f);
+            Vector3 forceAngle = new Vector3(pose.tilt, 10f + pose.tilt_forward, 0f);
             // rb.AddForce(50000f*forceAngle.x, 50000f*forceAngle.y, 50000f*forceAngle.z);
+            Debug.Log($"acceleration: {pose.acceleration}");
+            // Debug.Log($"tilt: {pose.tilt}");
             // forceKeisu = 50000f * pose.acceleration;
-            // rb.AddForce(forceKeisu * forceAngle.x, forceKeisu * forceAngle.y, forceKeisu * forceAngle.z);
+            forceKeisu = 500f*pose.acceleration;
+            rb.AddForce(30f*forceKeisu * forceAngle.x, 7f*forceKeisu * forceAngle.y, forceKeisu * forceAngle.z);
         }
         else // is_Mutekiのとき. agentが制御.
         {
