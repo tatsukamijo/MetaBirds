@@ -22,14 +22,14 @@ public class Pose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Vector3 localAngle = this.transform.localEulerAngles;
         /*
         localAngle.x = tilt;
         localAngle.y = 97.011f;
         localAngle.z = -20.215f - tilt_forward;
         this.transform.localEulerAngles = localAngle;
-        */
+        */       
+
 
         // →キー押下時
         if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -77,7 +77,7 @@ public class Pose : MonoBehaviour
         else if (hoge > 15000f)
         {
             hoge -= 20000f;
-            if (hoge > 15f)
+            if (hoge > 10f)
             {
                 tilt_forward = 15f;
             }
