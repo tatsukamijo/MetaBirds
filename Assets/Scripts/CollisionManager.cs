@@ -9,6 +9,7 @@ public class CollisionManager : MonoBehaviour
     public Transform goal;
     public GameObject gameOverText;
     public GameObject ClearUI;
+    public TextMeshProUGUI ScoreResult;
     public TextMeshProUGUI TimeText;
     public TextMeshProUGUI ScoreText;
     public SerialHandler serialHandler;
@@ -88,8 +89,9 @@ public class CollisionManager : MonoBehaviour
         else if (col.gameObject.tag == "Clear")
         {
             is_Clear = true;
+            ScoreResult.text = item_obtained.ToString();
             ClearUI.SetActive(true);
-		audioSource.clip = BGM_goal;
+		    audioSource.clip = BGM_goal;
             audioSource.Play();
         }
         else if (col.gameObject.tag == "Wall")

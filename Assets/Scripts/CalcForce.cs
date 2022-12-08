@@ -35,15 +35,15 @@ public class CalcForce : MonoBehaviour
             float speed = 1000.0f;
             float x = Input.GetAxis("Horizontal") * speed;
             float z = Input.GetAxis("Vertical") * speed;
-            rb.AddForce(50f * x, 50f * z, 0f);
+            rb.AddForce(10f * x, 15f * z, 0f);
             // defaultでz軸から10°方向に力加える
             Vector3 forceAngle = new Vector3(pose.tilt, 10f + pose.tilt_forward, 0f);
             // rb.AddForce(50000f*forceAngle.x, 50000f*forceAngle.y, 50000f*forceAngle.z);
             Debug.Log($"acceleration: {pose.acceleration}");
-            // Debug.Log($"tilt: {pose.tilt}");
+            Debug.Log($"tilt: {pose.tilt}");
             // forceKeisu = 50000f * pose.acceleration;
             forceKeisu = pose.acceleration/3f;
-            rb.AddForce(250f*forceKeisu * forceAngle.x, 60f*forceKeisu * forceAngle.y, forceKeisu * forceAngle.z);
+            rb.AddForce(250f*forceKeisu * forceAngle.x, 80f*forceKeisu * forceAngle.y, forceKeisu * forceAngle.z);
         }
         else // is_Mutekiのとき. agentが制御.
         {

@@ -24,12 +24,13 @@ public class Pose : MonoBehaviour
     {
 
         Vector3 localAngle = this.transform.localEulerAngles;
+        /*
         localAngle.x = tilt;
         localAngle.y = 97.011f;
         localAngle.z = -20.215f - tilt_forward;
         this.transform.localEulerAngles = localAngle;
+        */
 
-        /*
         // →キー押下時
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -46,7 +47,7 @@ public class Pose : MonoBehaviour
             localAngle.z = -20.215f;
             this.transform.localEulerAngles = localAngle;
         }
-        */
+
     }
 
     void OnDataReceived(string message)
@@ -67,7 +68,7 @@ public class Pose : MonoBehaviour
             return;
         }
 
-        // Debug.Log($"sensor: {hoge}");
+        Debug.Log($"sensor: {hoge}");
         if (hoge < 5000f)
         {
             acceleration = hoge;
