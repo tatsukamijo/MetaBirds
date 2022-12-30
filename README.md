@@ -3,4 +3,4 @@
 東大工学部機械工学科 第21回メカトロカップで最優秀創造設計賞をいただきました．
 
 以下動画へのリンクとなります．詳細な技術説明も含みますので，ぜひご覧ください．  
-https://photos.app.goo.gl/dHH3wraenB4SQdFN7
+https://youtu.be/GUxI0jrUksE
