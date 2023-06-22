@@ -1,4 +1,7 @@
 # MetaBirds
+
+<img src="https://github.com/tatsukamijo/MetaBirds/assets/81934527/d857aeb7-3eef-4883-b4fe-a6d3c74abcf0" width="500">  
+
 This is a mechatronic game where you control a bird in Unity using information sensed from your entire body.  
 We received the Best Creative Design Award at the 21st Mechatronics Contest of the University of Tokyo's Faculty of Engineering, Department of Mechanical Engineering.
 
